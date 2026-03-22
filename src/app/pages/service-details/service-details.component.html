@@ -1,0 +1,189 @@
+<div *ngIf="loading" class="flex justify-center items-center min-h-screen">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div *ngIf="!loading && service" class="pb-20">
+  <!-- Hero Section -->
+  <div
+    class="relative h-[50vh] min-h-[400px] bg-cover bg-center"
+    [style.background-image]="'url(' + service.image + ')'"
+  >
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative container mx-auto px-4 h-full flex items-center">
+      <div class="text-white max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ service.title }}</h1>
+        <p class="text-xl text-gray-200">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Details -->
+  <div class="container mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Main Content -->
+      <div class="lg:col-span-2">
+        <h2 class="text-2xl font-bold mb-4">Service Overview</h2>
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          {{ service.description }}
+        </p>
+
+        <h3 class="text-xl font-bold mb-3">Key Features</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+          <li
+            *ngFor="let feature of service.features"
+            class="flex items-center"
+          >
+            <svg
+              class="w-5 h-5 text-primary-600 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            {{ feature }}
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-bold mb-3">Benefits</h3>
+        <div class="space-y-4 mb-8">
+          <div class="flex gap-3">
+            <svg
+              class="w-6 h-6 text-primary-600 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div>
+              <h4 class="font-semibold">Increased Efficiency</h4>
+              <p class="text-gray-600">
+                Streamline your operations with our optimized solutions
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <svg
+              class="w-6 h-6 text-primary-600 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div>
+              <h4 class="font-semibold">Cost-Effective</h4>
+              <p class="text-gray-600">
+                Reduce operational costs with our efficient solutions
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <svg
+              class="w-6 h-6 text-primary-600 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+            <div>
+              <h4 class="font-semibold">Fast Implementation</h4>
+              <p class="text-gray-600">
+                Quick deployment and minimal disruption
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div>
+        <mat-card class="sticky top-24">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-4">Pricing</h3>
+            <div class="text-3xl font-bold text-primary-600 mb-4">
+              {{ service.price }}
+            </div>
+            <button
+              mat-raised-button
+              color="primary"
+              class="w-full mb-3"
+              routerLink="/contact"
+            >
+              Get Started
+            </button>
+            <button mat-stroked-button class="w-full" routerLink="/contact">
+              Contact Sales
+            </button>
+            <hr class="my-6" />
+            <h4 class="font-semibold mb-3">What's Included:</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center text-sm text-gray-600">
+                <svg
+                  class="w-4 h-4 text-primary-600 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Free consultation
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <svg
+                  class="w-4 h-4 text-primary-600 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                30-day support
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <svg
+                  class="w-4 h-4 text-primary-600 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Documentation included
+              </li>
+            </ul>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

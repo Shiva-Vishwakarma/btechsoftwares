@@ -1,0 +1,77 @@
+<!-- Hero Section -->
+<section
+  class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20"
+>
+  <div class="container mx-auto px-4 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Meet Our Team</h1>
+    <p class="text-xl text-gray-200 max-w-2xl mx-auto">
+      The passionate experts behind our success, dedicated to delivering
+      excellence
+    </p>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <!-- Department Filters -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button
+        *ngFor="let dept of departments"
+        (click)="selectDepartment(dept.id)"
+        [class]="
+          selectedDepartment === dept.id
+            ? 'bg-primary-600 text-white'
+            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+        "
+        class="px-6 py-2 rounded-full transition-all duration-300 font-medium"
+      >
+        {{ dept.name }}
+      </button>
+    </div>
+
+    <!-- Team Grid -->
+    <div *ngIf="loading" class="text-center py-12">
+      <mat-spinner diameter="50" class="mx-auto"></mat-spinner>
+    </div>
+
+    <div
+      *ngIf="!loading"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      <app-team-card
+        *ngFor="let member of filterTeam()"
+        [member]="member"
+      ></app-team-card>
+    </div>
+
+    <!-- No Results Message -->
+    <div
+      *ngIf="!loading && filterTeam().length === 0"
+      class="text-center py-12"
+    >
+      <p class="text-gray-500 text-lg">
+        No team members found in this category.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Join Our Team Section -->
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-4">Join Our Team</h2>
+    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+      We're always looking for talented individuals to join our growing team.
+      Check out our career opportunities.
+    </p>
+    <button
+      mat-raised-button
+      color="primary"
+      class="px-8 py-3 text-lg"
+      routerLink="/contact"
+    >
+      View Open Positions
+    </button>
+  </div>
+</section>

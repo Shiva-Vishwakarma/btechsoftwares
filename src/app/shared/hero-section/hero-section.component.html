@@ -1,0 +1,206 @@
+<!-- <section
+  class="relative min-h-screen flex items-center overflow-hidden"
+  [class.bg-gradient-to-br]="gradient"
+  [class.from-primary-600]="gradient"
+  [class.to-primary-800]="gradient"
+  [style.background-image]="
+    backgroundImage ? 'url(' + backgroundImage + ')' : 'none'
+  "
+  [style.background-size]="backgroundImage ? 'cover' : 'auto'"
+  [style.background-position]="backgroundImage ? 'center' : 'auto'"
+>
+
+  <div
+    *ngIf="backgroundImage"
+    class="absolute inset-0 bg-black bg-opacity-50"
+  ></div>
+
+
+  <div class="absolute inset-0 overflow-hidden">
+    <div
+      class="absolute -top-40 -right-40 w-80 h-80 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+    ></div>
+    <div
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+    ></div>
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div @fadeInUp class="text-center max-w-4xl mx-auto">
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+        [class.text-white]="gradient || backgroundImage"
+        [class.text-gray-900]="!gradient && !backgroundImage"
+      >
+        {{ title }}
+      </h1>
+      <p
+        class="text-xl md:text-2xl mb-8 leading-relaxed max-w-2xl mx-auto"
+        [class.text-gray-200]="gradient || backgroundImage"
+        [class.text-gray-600]="!gradient && !backgroundImage"
+      >
+        {{ subtitle }}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          mat-raised-button
+          color="primary"
+          class="px-8 py-3 text-lg font-semibold"
+          [routerLink]="buttonLink"
+        >
+          {{ buttonText }}
+          <svg
+            class="w-5 h-5 ml-2 inline-block"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
+        </button>
+        <button
+          mat-stroked-button
+          class="px-8 py-3 text-lg font-semibold"
+          [class.border-white]="gradient || backgroundImage"
+          [class.text-white]="gradient || backgroundImage"
+          [class.hover:bg-white]="gradient || backgroundImage"
+          [class.hover:text-primary-600]="gradient || backgroundImage"
+          [routerLink]="secondaryButtonLink"
+        >
+          {{ secondaryButtonText }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+  >
+    <svg
+      class="w-6 h-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7-7-7m14-6l-7 7-7-7"
+      ></path>
+    </svg>
+  </div>
+</section> -->
+
+<section
+  class="relative min-h-screen flex items-center overflow-hidden"
+  [class.bg-gradient-to-br]="gradient && !backgroundImage"
+  [class.from-primary-600]="gradient && !backgroundImage"
+  [class.to-primary-800]="gradient && !backgroundImage"
+  [style.background-image]="
+    backgroundImage
+      ? 'url(' + backgroundImage + ')'
+      : gradient
+        ? 'none'
+        : 'url(' + defaultImage + ')'
+  "
+  [style.background-size]="'cover'"
+  [style.background-position]="'center'"
+  [style.background-repeat]="'no-repeat'"
+>
+  <!-- Overlay for background image -->
+  <div
+    class="absolute inset-0"
+    [class.bg-black]="backgroundImage || !gradient"
+    [class.bg-opacity-60]="backgroundImage || !gradient"
+    [class.bg-gradient-to-br]="gradient && !backgroundImage"
+    [class.from-primary-600]="gradient && !backgroundImage"
+    [class.to-primary-800]="gradient && !backgroundImage"
+  ></div>
+
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div
+      class="absolute -top-40 -right-40 w-80 h-80 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+    ></div>
+    <div
+      class="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+    ></div>
+    <div
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+    ></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div @fadeInUp class="text-center max-w-4xl mx-auto">
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white"
+      >
+        {{ title }}
+      </h1>
+      <p
+        class="text-xl md:text-2xl mb-8 leading-relaxed max-w-2xl mx-auto text-gray-200"
+      >
+        {{ subtitle }}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          mat-raised-button
+          color="primary"
+          class="px-8 py-3 text-lg font-semibold"
+          [routerLink]="buttonLink"
+        >
+          {{ buttonText }}
+          <svg
+            class="w-5 h-5 ml-2 inline-block"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
+        </button>
+        <button
+          mat-stroked-button
+          class="px-8 py-3 text-lg font-semibold border-white text-white hover:bg-white hover:text-primary-600 transition-all duration-300"
+          [routerLink]="secondaryButtonLink"
+        >
+          {{ secondaryButtonText }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+  >
+    <svg
+      class="w-6 h-6 text-white"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7-7-7m14-6l-7 7-7-7"
+      ></path>
+    </svg>
+  </div>
+</section>

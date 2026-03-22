@@ -1,0 +1,85 @@
+<section
+  class="py-20 relative overflow-hidden"
+  [class.bg-gradient-to-r]="variant === 'default'"
+  [class.from-primary-600]="variant === 'default'"
+  [class.to-primary-800]="variant === 'default'"
+  [class.bg-gray-900]="variant === 'dark'"
+  [class.bg-gray-50]="variant === 'light'"
+>
+  <!-- Animated Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <svg
+      class="absolute left-0 top-0 h-full w-full"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path
+            d="M 40 0 L 0 0 0 40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center max-w-4xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+        [class.text-white]="variant === 'default' || variant === 'dark'"
+        [class.text-gray-900]="variant === 'light'"
+      >
+        {{ title }}
+      </h2>
+      <p
+        class="text-xl mb-8 max-w-2xl mx-auto"
+        [class.text-gray-200]="variant === 'default'"
+        [class.text-gray-300]="variant === 'dark'"
+        [class.text-gray-600]="variant === 'light'"
+      >
+        {{ subtitle }}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          mat-raised-button
+          [color]="variant === 'light' ? 'primary' : 'accent'"
+          class="px-8 py-3 text-lg font-semibold"
+          [routerLink]="buttonLink"
+        >
+          {{ buttonText }}
+          <svg
+            class="w-5 h-5 ml-2 inline-block"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            ></path>
+          </svg>
+        </button>
+        <button
+          *ngIf="secondaryButtonText"
+          mat-stroked-button
+          class="px-8 py-3 text-lg font-semibold"
+          [class.border-white]="variant === 'default' || variant === 'dark'"
+          [class.text-white]="variant === 'default' || variant === 'dark'"
+          [class.hover:bg-white]="variant === 'default' || variant === 'dark'"
+          [class.hover:text-primary-600]="
+            variant === 'default' || variant === 'dark'
+          "
+          [routerLink]="secondaryButtonLink"
+        >
+          {{ secondaryButtonText }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

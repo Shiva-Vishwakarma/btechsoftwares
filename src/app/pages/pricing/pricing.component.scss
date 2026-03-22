@@ -1,0 +1,256 @@
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+// Button hover effects
+button {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.6s,
+      height 0.6s;
+  }
+
+  &:active::after {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// Card hover effects
+.rounded-2xl {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// Feature list item hover
+.flex.items-center {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+// // Card hover effects
+// .hover-card {
+//   transition: all 0.3s ease;
+//   position: relative;
+//   overflow: hidden;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     height: 4px;
+//     background: linear-gradient(90deg, #0ea5e9, #0284c7, #0ea5e9);
+//     transform: translateX(-100%);
+//     transition: transform 0.5s ease;
+//   }
+
+//   &:hover {
+//     transform: translateY(-8px);
+
+//     &::before {
+//       transform: translateX(0);
+//     }
+
+//     .mat-raised-button {
+//       transform: scale(1.05);
+//       box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.5);
+//     }
+//   }
+// }
+
+// // Recommended card special styling
+// .border-primary-600 {
+//   box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.3);
+//   position: relative;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     border-radius: inherit;
+//     padding: 2px;
+//     background: linear-gradient(135deg, #0ea5e9, #0284c7);
+//     mask:
+//       linear-gradient(#fff 0 0) content-box,
+//       linear-gradient(#fff 0 0);
+//     -webkit-mask:
+//       linear-gradient(#fff 0 0) content-box,
+//       linear-gradient(#fff 0 0);
+//     -webkit-mask-composite: xor;
+//     mask-composite: exclude;
+//     pointer-events: none;
+//   }
+// }
+
+// // Button hover effects
+// .mat-raised-button {
+//   transition: all 0.3s ease;
+//   position: relative;
+//   overflow: hidden;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     width: 0;
+//     height: 0;
+//     border-radius: 50%;
+//     background: rgba(255, 255, 255, 0.3);
+//     transform: translate(-50%, -50%);
+//     transition:
+//       width 0.6s,
+//       height 0.6s;
+//   }
+
+//   &:active::after {
+//     width: 300px;
+//     height: 300px;
+//   }
+// }
+
+// // Feature list animation
+// .flex.items-start.group {
+//   transition: all 0.2s ease;
+
+//   &:hover {
+//     transform: translateX(5px);
+//   }
+// }
+
+// // Price highlight
+// .text-primary-600 {
+//   position: relative;
+//   display: inline-block;
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     bottom: -5px;
+//     left: 0;
+//     width: 100%;
+//     height: 2px;
+//     background: linear-gradient(90deg, #0ea5e9, transparent);
+//     transform: scaleX(0);
+//     transition: transform 0.3s ease;
+//   }
+
+//   &:hover::after {
+//     transform: scaleX(1);
+//   }
+// }
+
+// // Responsive adjustments
+// @media (max-width: 768px) {
+//   .hover-card {
+//     &:hover {
+//       transform: translateY(-4px);
+//     }
+//   }
+
+//   .text-5xl {
+//     font-size: 2.5rem;
+//   }
+// }
+
+// // Smooth shadow transitions
+// .shadow-lg,
+// .shadow-2xl {
+//   transition: box-shadow 0.3s ease;
+// }
+
+// // Badge animations
+// .bg-gradient-to-r {
+//   animation: pulse 2s infinite;
+// }
+
+// @keyframes pulse {
+//   0%,
+//   100% {
+//     transform: scale(1);
+//   }
+//   50% {
+//     transform: scale(1.05);
+//   }
+// }
+
+// // Custom scrollbar for feature lists
+// .space-y-3 {
+//   max-height: 300px;
+//   overflow-y: auto;
+//   padding-right: 5px;
+
+//   &::-webkit-scrollbar {
+//     width: 4px;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//     background: #f1f1f1;
+//     border-radius: 10px;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background: #0ea5e9;
+//     border-radius: 10px;
+//   }
+// }

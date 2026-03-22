@@ -1,0 +1,36 @@
+// Logo hover effect
+.logo-container {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+// Smooth transitions for logo
+.logo-image {
+  transition: all 0.3s ease;
+}
+
+// Dark mode adjustments
+@media (prefers-color-scheme: dark) {
+  .logo-image {
+    filter: brightness(0) invert(1);
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .logo-image {
+    height: 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}

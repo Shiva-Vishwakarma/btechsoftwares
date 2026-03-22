@@ -1,0 +1,93 @@
+// Animation keyframes
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+// Custom Expansion Panel Styling
+::ng-deep {
+  .custom-expansion-panel {
+    transition: all 0.3s ease;
+
+    .mat-expansion-panel-header {
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
+      }
+    }
+
+    &.expanded {
+      box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+      .mat-expansion-panel-header {
+        background: linear-gradient(90deg, #f0f9ff 0%, #ffffff 100%);
+      }
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0;
+    }
+  }
+}
+
+// Scroll behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border-radius: 10px;
+
+  &:hover {
+    background: #0284c7;
+  }
+}

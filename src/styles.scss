@@ -1,1 +1,242 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// // Import Tailwind CSS
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+// // Import Google Fonts
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+// // Import Angular Material theme
+// @use "@angular/material" as mat;
+
+// @include mat.core();
+
+// // Define custom theme
+// $company-website-primary: mat.define-palette(mat.$indigo-palette);
+// $company-website-accent: mat.define-palette(
+//   mat.$pink-palette,
+//   A200,
+//   A100,
+//   A400
+// );
+// $company-website-warn: mat.define-palette(mat.$red-palette);
+
+// $company-website-theme: mat.define-light-theme(
+//   (
+//     color: (
+//       primary: $company-website-primary,
+//       accent: $company-website-accent,
+//       warn: $company-website-warn,
+//     ),
+//     typography: mat.define-typography-config(),
+//     density: 0,
+//   )
+// );
+
+// @include mat.all-component-themes($company-website-theme);
+
+// // Custom global styles
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// body {
+//   font-family: "Poppins", sans-serif;
+//   overflow-x: hidden;
+// }
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+// // Custom scrollbar
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+//   border-radius: 5px;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
+// // Import Google Fonts
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+// // Custom global styles
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+
+// body {
+//   font-family: "Poppins", sans-serif;
+//   overflow-x: hidden;
+// }
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+// // Custom scrollbar
+// ::-webkit-scrollbar {
+//   width: 10px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f1;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #888;
+//   border-radius: 5px;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
+
+// // Container class for consistent padding
+// .container {
+//   @apply px-4 mx-auto;
+//   max-width: 1280px;
+// }
+
+// // Animation classes
+// .fade-in {
+//   animation: fadeIn 0.5s ease-in-out;
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// .slide-up {
+//   animation: slideUp 0.5s ease-out;
+// }
+
+// @keyframes slideUp {
+//   from {
+//     transform: translateY(20px);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: translateY(0);
+//     opacity: 1;
+//   }
+// }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Import Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+// Custom global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+// Container class for consistent padding
+.container {
+  @apply px-4 mx-auto;
+  max-width: 1280px;
+}
+
+// Animation classes
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Snackbar custom styles
+.success-snackbar {
+  background: #10b981;
+  color: white;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.error-snackbar {
+  background: #ef4444;
+  color: white;
+
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
