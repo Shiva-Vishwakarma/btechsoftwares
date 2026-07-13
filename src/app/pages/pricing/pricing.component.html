@@ -63,7 +63,7 @@
             <p class="text-gray-600 mb-4">{{ plan.description }}</p>
             <div class="mb-6">
               <span class="text-4xl font-bold text-primary-600">
-                {{ plan.price === "Custom" ? plan.price : "$" + plan.price }}
+                {{ plan.price === "Custom" ? plan.price : "₹" + plan.price }}
               </span>
               <span class="text-gray-500" *ngIf="plan.price !== 'Custom'">
                 / {{ plan.period }}
@@ -144,7 +144,7 @@
             <p class="text-gray-600 mb-4">{{ plan.description }}</p>
             <div class="mb-6">
               <span class="text-4xl font-bold text-primary-600"
-                >${{ plan.price }}</span
+                >₹{{ plan.price }}</span
               >
               <span class="text-gray-500"> / {{ plan.period }}</span>
             </div>

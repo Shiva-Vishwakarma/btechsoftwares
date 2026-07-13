@@ -33,11 +33,14 @@ export class BlogDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.dataService.getBlogById(id).subscribe((post) => {
-      this.post = post;
-      this.loadRelatedPosts(post?.category);
-      this.loading = false;
+    this.route.paramMap.subscribe(params => {
+      this.loading = true;
+      const id = Number(params.get('id'));
+      this.dataService.getBlogById(id).subscribe((post) => {
+        this.post = post;
+        this.loadRelatedPosts(post?.category);
+        this.loading = false;
+      });
     });
   }
 

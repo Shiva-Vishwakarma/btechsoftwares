@@ -119,10 +119,13 @@ export class PortfolioDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.dataService.getPortfolioById(id).subscribe((project) => {
-      this.project = project;
-      this.loading = false;
+    this.route.paramMap.subscribe(params => {
+      this.loading = true;
+      const id = Number(params.get('id'));
+      this.dataService.getPortfolioById(id).subscribe((project) => {
+        this.project = project;
+        this.loading = false;
+      });
     });
   }
 

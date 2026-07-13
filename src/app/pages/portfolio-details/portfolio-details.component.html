@@ -202,18 +202,18 @@
   <!-- Hero Section -->
   <div
     class="relative h-[60vh] min-h-[500px] bg-cover bg-center"
-    [style.background-image]="'url(' + project?.image + ')'"
+    [style.background-image]="'url(' + project.image + ')'"
   >
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     <div class="relative container mx-auto px-4 h-full flex items-center">
       <div class="text-white max-w-3xl">
         <span class="text-primary-400 font-semibold text-lg">{{
-          project?.category
+          project.category
         }}</span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4 mt-2">
-          {{ project?.title }}
+          {{ project.title }}
         </h1>
-        <p class="text-xl text-gray-200">{{ project?.description }}</p>
+        <p class="text-xl text-gray-200">{{ project.description }}</p>
       </div>
     </div>
   </div>
@@ -224,7 +224,7 @@
       <div class="lg:col-span-2">
         <!-- Image Gallery Section -->
         <!-- Image Gallery Section -->
-        <ng-container *ngIf="project?.images as images">
+        <ng-container *ngIf="project.images as images">
           <div *ngIf="images.length > 0" class="mb-10">
             <h2 class="text-2xl font-bold mb-4">Project Gallery</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -235,7 +235,7 @@
               >
                 <img
                   [src]="image"
-                  [alt]="(project?.title || 'Project') + ' - Image ' + (i + 1)"
+                  [alt]="(project.title || 'Project') + ' - Image ' + (i + 1)"
                   class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div
@@ -262,13 +262,13 @@
 
         <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
         <p class="text-gray-600 mb-6 leading-relaxed">
-          {{ project?.description }}
+          {{ project.description }}
         </p>
 
         <h3 class="text-xl font-bold mb-3">Technologies Used</h3>
         <div class="flex flex-wrap gap-2 mb-8">
           <mat-chip
-            *ngFor="let tech of project?.technologies"
+            *ngFor="let tech of project.technologies"
             color="primary"
             selected
           >
@@ -337,12 +337,12 @@
 
             <div class="mb-4">
               <p class="text-sm text-gray-500 mb-1">Client</p>
-              <p class="font-semibold">{{ project?.client }}</p>
+              <p class="font-semibold">{{ project.client }}</p>
             </div>
 
             <div class="mb-4">
               <p class="text-sm text-gray-500 mb-1">Category</p>
-              <p class="font-semibold">{{ project?.category }}</p>
+              <p class="font-semibold">{{ project.category }}</p>
             </div>
 
             <div class="mb-6">
@@ -350,7 +350,7 @@
               <div class="flex flex-wrap gap-1">
                 <span
                   *ngFor="
-                    let tech of project?.technologies || [] | slice: 0 : 3
+                    let tech of project.technologies || [] | slice: 0 : 3
                   "
                   class="text-xs bg-gray-100 px-2 py-1 rounded"
                 >
@@ -361,21 +361,21 @@
 
             <div class="space-y-3">
               <a
-                *ngIf="project?.liveUrl"
+                *ngIf="project.liveUrl"
                 mat-raised-button
                 color="primary"
                 class="w-full inline-block text-center"
-                [href]="project?.liveUrl"
+                [href]="project.liveUrl"
                 target="_blank"
               >
                 View Live Project
               </a>
               <a
-                *ngIf="project?.githubUrl"
+                *ngIf="project.githubUrl"
                 mat-stroked-button
                 color="primary"
                 class="w-full inline-block text-center"
-                [href]="project?.githubUrl"
+                [href]="project.githubUrl"
                 target="_blank"
               >
                 View Source Code
@@ -402,7 +402,7 @@
 
 <!-- Image Lightbox Modal - COMPLETELY FIXED with all safe navigation operators -->
 <!-- Image Lightbox Modal -->
-<ng-container *ngIf="showImageModal && project?.images as images">
+<ng-container *ngIf="showImageModal && project && project.images as images">
   <div
     *ngIf="images.length"
     class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 transition-all duration-300"
@@ -435,7 +435,7 @@
       <!-- Main Image -->
       <img
         [src]="currentImage"
-        [alt]="project?.title || 'Project Image'"
+        [alt]="project.title || 'Project Image'"
         class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
       />
 

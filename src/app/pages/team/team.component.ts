@@ -55,14 +55,16 @@ export class TeamComponent implements OnInit {
         return (
           position.includes('ceo') ||
           position.includes('cto') ||
-          position.includes('director')
+          position.includes('director') ||
+          position.includes('founder') ||
+          position.includes('lead')
         );
       } else if (this.selectedDepartment === 'development') {
-        return position.includes('developer') || position.includes('engineer');
+        return position.includes('developer') || position.includes('engineer') || position.includes('tech');
       } else if (this.selectedDepartment === 'design') {
-        return position.includes('designer');
+        return position.includes('design') || position.includes('desingner');
       } else if (this.selectedDepartment === 'marketing') {
-        return position.includes('marketing');
+        return position.includes('marketing') || position.includes('data');
       }
       return true;
     });

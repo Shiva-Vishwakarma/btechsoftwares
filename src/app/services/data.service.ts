@@ -36,7 +36,7 @@ export class DataService {
         'Progressive Web Apps',
         'Performance Optimization',
       ],
-      price: 'Starting at $999',
+      price: 'Starting at ₹999',
     },
     {
       id: 2,
@@ -54,7 +54,7 @@ export class DataService {
         'Push Notifications',
         'Offline Sync',
       ],
-      price: 'Starting at $1499',
+      price: 'Starting at ₹1499',
     },
     {
       id: 3,
@@ -72,7 +72,7 @@ export class DataService {
         'Usability Testing',
         'Design Systems',
       ],
-      price: 'Starting at $799',
+      price: 'Starting at ₹799',
     },
     {
       id: 4,
@@ -90,7 +90,7 @@ export class DataService {
         'PPC Advertising',
         'Analytics & Reporting',
       ],
-      price: 'Starting at $599/month',
+      price: 'Starting at ₹599/month',
     },
     {
       id: 5,
@@ -108,7 +108,7 @@ export class DataService {
         'Cloud Migration',
         '24/7 Monitoring',
       ],
-      price: 'Starting at $1999',
+      price: 'Starting at ₹1999',
     },
     {
       id: 6,
@@ -126,7 +126,7 @@ export class DataService {
         'Order Tracking',
         'Customer Accounts',
       ],
-      price: 'Starting at $1499',
+      price: 'Starting at ₹1499',
     },
   ];
 
@@ -134,10 +134,9 @@ export class DataService {
     {
       id: 1,
       name: 'Kaushik Sahu',
-      position: 'Co Founder',
-      bio: 'Visionary leader with 12+ years of experience in tech industry. John founded the company with a mission to deliver exceptional digital solutions that transform businesses.',
-      image:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      position: 'Founder',
+      bio: 'Visionary leader with 12+ years of experience in tech industry. Kaushik founded the company with a mission to deliver exceptional digital solutions that transform businesses.',
+      image: 'assets/Portrait_Placeholder.png',
       socialLinks: {
         linkedin: 'https://linkedin.com/in/',
         twitter: 'https://twitter.com/',
@@ -148,10 +147,9 @@ export class DataService {
     {
       id: 2,
       name: 'Rahul Kannaujiya',
-      position: 'Co Founder',
-      bio: 'Technical architect and AI specialist with expertise in scalable systems. Sarah leads our engineering team to deliver cutting-edge solutions.',
-      image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
+      position: 'Tech Lead',
+      bio: 'Technical architect and AI specialist with expertise in scalable systems. Rahul leads our engineering team to deliver cutting-edge solutions.',
+      image: 'assets/Portrait_Placeholder.png',
       socialLinks: {
         linkedin: 'https://linkedin.com/in/',
         twitter: 'https://twitter.com/',
@@ -166,11 +164,10 @@ export class DataService {
     },
     {
       id: 3,
-      name: 'Anant Tiwari',
-      position: 'Lead Developer',
-      bio: 'Full-stack developer passionate about creating elegant code solutions. Michael specializes in modern web technologies and best practices.',
-      image:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
+      name: 'Shiva Vishwakarma',
+      position: 'Developer',
+      bio: 'Full-stack developer passionate about creating elegant code solutions. Shiva specializes in modern web technologies and best practices.',
+      image: 'assets/Portrait_Placeholder.png',
       socialLinks: {
         linkedin: 'https://linkedin.com/in/',
         github: 'https://github.com/',
@@ -179,42 +176,27 @@ export class DataService {
     },
     {
       id: 4,
+      name: 'Anant Tiwari',
+      position: 'Data Capturers',
+      bio: 'Detail-oriented professional focused on data entry and capture processes. Anant ensures data integrity and accuracy across systems.',
+      image: 'assets/Portrait_Placeholder.png',
+      socialLinks: {
+        linkedin: 'https://linkedin.com/in/',
+      },
+      skills: ['Data Entry', 'Accuracy', 'Database Management', 'Data Analysis'],
+    },
+    {
+      id: 5,
       name: 'Dona Sarkar',
-      position: 'UI/UX Designer',
-      bio: 'Creative designer focused on user-centered design and beautiful interfaces. Emily creates experiences that users love and remember.',
-      image:
-        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      position: 'Graphic desingner',
+      bio: 'Creative designer focused on user-centered design and beautiful interfaces. Dona creates experiences that users love and remember.',
+      image: 'assets/Portrait_Placeholder.png',
       socialLinks: {
         linkedin: 'https://linkedin.com/in/',
         twitter: 'https://twitter.com/',
       },
       skills: ['Figma', 'User Research', 'Prototyping', 'Design Systems'],
-    },
-    {
-      id: 5,
-      name: 'David Kim',
-      position: 'Marketing Director',
-      bio: 'Digital marketing strategist with expertise in growth hacking. David drives our marketing efforts and client acquisition strategies.',
-      image:
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
-      socialLinks: {
-        linkedin: 'https://linkedin.com/in/davidkim',
-        twitter: 'https://twitter.com/davidkim',
-      },
-      skills: ['SEO', 'Content Strategy', 'Analytics', 'Growth Hacking'],
-    },
-    {
-      id: 6,
-      name: 'Lisa Wang',
-      position: 'Project Manager',
-      bio: 'Agile expert ensuring projects are delivered on time and within budget. Lisa keeps our teams organized and clients happy.',
-      image:
-        'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
-      socialLinks: {
-        linkedin: 'https://linkedin.com/in/lisawang',
-      },
-      skills: ['Agile', 'Scrum', 'Risk Management', 'Client Relations'],
-    },
+    }
   ];
 
   private portfolio: Portfolio[] = [
